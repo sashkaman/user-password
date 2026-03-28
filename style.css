@@ -1,0 +1,153 @@
+* {
+    margin: 5;
+    padding: 5;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: radial-gradient(circle at top right, #3d1a5e, #0a0510);
+    /* background: linear-gradient(135deg, #8e8f89, #1f5f6e); */
+    overflow: hidden;
+    position: relative;
+
+    color: black;
+}
+
+.instructions {
+    color: yellow;
+}
+
+/* центрируем по левому краю */
+.bg-hint {
+
+    color: black;
+
+    padding-left: 30px;
+
+    border: 5px solid black;
+    border-radius: 10px;
+    position: absolute;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    text-align: left;
+
+    font-size: 20px;
+    font-weight: 600px;
+    line-height: 1.5;
+
+    background-color: grey;
+    width: 70%;
+    height: 300px;
+}
+
+/* ===== ФОРМА ===== */
+.login-box {
+    position: re1tive;
+    z-index: 2;
+    width: 360px;
+    padding: 40px;
+    border-radius: 20px;
+
+    background: rgba(40, 45, 70, 0.45);
+    backdrop-filter: blur(25px);
+
+    color: white;
+    text-align: center;
+
+    filter: blur(12px);
+    opacity: 0.2;
+    transform: scale(0.95);
+
+    transition: filter 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.6s ease;
+}
+
+/* ===== ФОКУС НА ФОРМЕ ===== */
+.login-box:hover {
+    filter: blur(0);
+    opacity: 1;
+    transform: scale(1);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.6),
+        0 0 40px rgba(255, 255, 255, 0.08);
+}
+
+/* ===== ФОН РЕАГИРУЕТ ===== */
+.login-box:hover~.bg-hint {
+    opacity: 0.03;
+
+    filter: blur(4px);
+    transform: scale(1.05);
+}
+
+/* когда НЕ на форме — фон читаемый */
+.bg-hint {
+    opacity: 0.15;
+}
+
+/* ===== INPUTS ===== */
+.login-box input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+
+    border-radius: 10px;
+    border: none;
+    outline: none;
+
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+
+    transition: 0.3s;
+}
+
+.login-box input:focus {
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* ===== BUTTON ===== */
+.login-box button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(135deg, #ff6a6a, #ff3b3b);
+    color: white;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-box button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 60, 60, 0.4);
+}
+
+.footer {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer a {
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+}
